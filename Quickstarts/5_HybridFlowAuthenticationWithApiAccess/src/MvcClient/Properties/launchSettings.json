@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:5002",
+      "applicationUrl": "http://localhost:7002",
       "sslPort": 0
     }
   },
@@ -18,7 +18,7 @@
     "MvcClient": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5002",
+      "launchUrl": "http://localhost:7002",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

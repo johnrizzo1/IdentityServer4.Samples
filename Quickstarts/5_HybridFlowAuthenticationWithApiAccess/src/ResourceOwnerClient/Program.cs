@@ -16,7 +16,7 @@ namespace ResourceOwnerClient
         private static async Task MainAsync()
         {
             // discover endpoints from metadata
-            var disco = await DiscoveryClient.GetAsync("http://localhost:5000");
+            var disco = await DiscoveryClient.GetAsync("http://localhost:7000");
 
             // request token
             var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
@@ -35,7 +35,7 @@ namespace ResourceOwnerClient
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await client.GetAsync("http://localhost:5001/identity");
+            var response = await client.GetAsync("http://localhost:7001/identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
@@ -45,6 +45,8 @@ namespace ResourceOwnerClient
                 var content = response.Content.ReadAsStringAsync().Result;
                 Console.WriteLine(JArray.Parse(content));
             }
+
+            Console.ReadKey();
         }
     }
 }

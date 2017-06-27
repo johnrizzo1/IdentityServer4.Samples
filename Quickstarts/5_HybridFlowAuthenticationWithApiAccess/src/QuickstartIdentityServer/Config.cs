@@ -23,6 +23,7 @@ namespace QuickstartIdentityServer
 
         public static IEnumerable<ApiResource> GetApiResources()
         {
+
             return new List<ApiResource>
             {
                 new ApiResource("api1", "My API")
@@ -72,8 +73,8 @@ namespace QuickstartIdentityServer
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                    RedirectUris = { "http://localhost:7002/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://localhost:7002/signout-callback-oidc" },
 
                     AllowedScopes = 
                     {
